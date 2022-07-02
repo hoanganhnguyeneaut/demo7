@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/png" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHoAegMBEQACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABAUCAwYHAf/EAD0QAAEDAgMGAwUFBgcBAAAAAAECAwQAEQUSIQYTMUFRYSJxoQcUgZHRMkJi4fAVIzNSksFDcqKxssLiJP/EABsBAQACAwEBAAAAAAAAAAAAAAADBAIFBgEH/8QAMxEAAgIBAgQCCQMFAQEAAAAAAAECAxEEIQUSMUETUSIyYXGBkaHR8COx4QYUM1LBQhX/2gAMAwEAAhEDEQA/APcaAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKA+XoCM9iERkkOPoBHIG59KrW6zT0/5JpfEkjTZLoiKvHoaTYB1XcJ+tUZcc0KeOf6MnWiufYIx2Eo2JcT3Uj6V7Djehk8c+Pgzx6K5diYxNjP2DTyFE8r6/Kr9Wppu/xyT+JBKqcPWRvBvU5gfaAUAoBQCgFAKAUAoCvxHFGYd0fxHv5Af9+la/XcRp0ixLeXZLqWKdNO3ddCuLeI4iLyHdy0fugW9PrWnk+Ia3ecvDj5Lr+fL3FpOinaK5mbmsIiNjxJU4fxH+1Z18J0sN2uZ+0xlqrH02NrkeEw2VuNMobTxUoCw86tLR6ftWvkRO6z/ZmSoMVWhjt/AWrGWi0zW8F8j1X2LpIivYNHXq2VNnlrcVTs4RQ3mtuL/PzqSx1c1tLc1b7EsM1UQ+wOutvjxFeLVa/Qev6cPzv98mXh0X9NmW8DEGJqf3arLA1QeIrfaPXU6uOa3v3XdFG6mdTxImVcIhQCgFAKAUAoCoxjEzH/8AnjG76un3R9a0/FOJf2yVVW839C5pdP4npS9VEWDDSyd68c7x1JOuXy+tavS6ZVvxbPSm+/5+eRPba5ejHaJPz1f8Qr8pDbxaM7i72FtrzSWGUvOgfcCiQAe+l/Ks22o83Yxys4McdgJxjBpuGrcU2JTCmt4nigkaH4GxryF/LJMOOUedRvaBtBslHEPbrA5LgaO7RiMaxS9bmb6E97g9RVzw4271yI+ZrqdrsztZE2lTngMuobIvd1xrN/QlRV8wKr2RlX1M1LJeqcAFzUankzUclTKYSlz3iCsJWnUpB9R9K1Op00qZePpnhrsvz6F2uba5LVsXGEYiJreRdkvIHiHUdRW/4bxGOsr8pLqv+lDUad0v2FjWyKwoBQCgFARMTlphRFumxVwSOpqrrNVHS0ytl26e/sS01O2aijnsOQVuLlOkqWo6E9eZrj9K5WWS1FnVm2uxFKuPQmSd+tlQjPJadt4VqRnA8xcX+YrYqxJ7lRrbY862txbbaC7+z4mK4U5MdTduPh8NxUlSf5spzBI/ESB3rYUKiS5mnj2vYrycltk3+ziDi+ARpDmJYO87NmubyXLdnNKcWRewAvwF+ar6msNVdXY/RlsumzPYRkt8HoanFloluyVlPhzC9j3AqgrFnclwUTOyuFLlKnYjGRPnKtmflpDqvIX0SOyQAO/Gpnq54xF4XsMVWu5NcwPCnMoXhkFaQbhK4yDbuDa4NYf3E/8AZnvIvIkPusYdDWtxWVhAJUXFqVlHQXuT2HyopzsliHVnu0dyBg0yHicCPisRKgzITnSeduGoryU7apNS3wTu2TjgykKVDmIfjkAfaTbh3H661q52y0eqV1fT8yieEVdW4yOqiSESo6Hmz4Vi9dxTdC6tWQezNNODhJxfVG6pTA1SJDUdGd1aUjvz8qiuurpg52PCMoxcnhIhoxiOpYTZwDqRWrhx7RSny83xxsTvS2JZJ4UCAQQQeBFbgrHMbRyC5NSyD4Whr/mNcj/UOpcrI0rot373/Bt+H1Yg5vuG1pYjpKyAkDnUOnhitY7GUk5T2My646wosEIWRopQuE97c/KpXKMfWI7INbGmFAjw94GW9XVZ3nF6rfV1WeflwHAACwqOd8p4z8PYRxrUSbnqPnMuU+Z6c57gZ6c4waX5aGlBsAuOkXS0jVR79h3NhVnTae7UyxUs/sRznGHUocbxRmHhQxbFFncLjrCWki4SpSLpSOqjqm5tx5V1Wl0VekhzPeT7/YpOUrpcqK72SPFexMZpRuY7zjfrm/7VzvEXy6h/A2XLjY6bElJEfOogBBrUaleJDbqT07SNGHYvJjNKaaCQkqzDMLkVNp+KX6KnwopPfv2M79HCyXNIsmcclBKsyG1mxIsLH86sU/1Hd0nBPy7fcqWaGC6MiuvOPLzuLKlda0Gr1t2rnzWvP7L3IsQqjBYiYJOUgjiKrReHkzaysEkpxEklnfbs/Yy8LcrV1tC4n4UeRbYWPcUc1dytkub6W+4TfOskeV60vEbPE1M5Pzf2NlTHlqivYTVbtaEly6hYaCrcbsRwiu3KPQpGdonlbWv7PrgWcRHEll1L1krb0HC3G5I48uVbDS8NnrK/Ernv7Srbcq3uXTU1TguIkjRRToEnUGx4HqKS4JrV0Sfx++DBaqsx/aTZYS+GZBaUElKt1a4NrHXzFYf/AB9d/p9V9zL+4q8zYH5KjZENQ7uuJSPS59KtV/0/q5es0vqRvVw7CFGm4i0lxTu6QeKGRYg8CCs8eHIJrZUcD01fpWycn8l9/rj2EM9TOXTYlYdhQZmS2AQgnI91JuMvE90H51toShUuWC2K7y3lnlPtFxp6VvsAYQyIUSSoqdQbqeIJI8gm9rDiR8Kq23Ny5Te6HQfpq59WXXsmBRsy8OXvi7f0ormOLSxqPgv+ns44lgt8ZkKdnpjg/u2kZiOqj+R9apQ9XJY0sd2zCM6nmbHoeNVL4MszLBp1ISSm6lEEDLqB3NU1Hl3ZTsTlsZoLh0SUhPIKTc+hqJ4MWi+wzDGVtJeeJWq5GW1k6Ejh8K7HhXCNK6oXyTbe+/T5fc1l+onzOK2LgCwAHAV0eCmefNG6R5V8zu9ZnUdiewu6B2rOueYlecdzhfazClsxYW0WFvOsS4Ci2txlRSrdqOh05BX/ACNdDwLVclrpf/rp70UtVXmOfIw2H9qeFphtRdqVSG5QUoqlttBSHLqJuQnVJ15C1dcrmlg1jr32O8wbEMEx7ZVxvC57Dr3uq2wneDO2QkgEpOo4A1i7W9g4OPVHUxEsSIjTzbacrqErFuhF6855eZ5gqDtBg2BMzGsQxCPH93kKBQpYz+LxgBPE6K5dKxlLuzOFcpPEVk8t249pT+IyijZx1+JGLKmnXSAFvAnS3NNtbHQ6nhUUp56Gxp0ais2nIsLD0YKFhcagVVawzpa5qdaZ6j7PY5jbKxyRq8tbvwJsPQCuX4pZzaqS8tjT272MyxI2xpST/iN3HfT/AMmoqpZgTUPB8bNjra1ezjlFtrJKjPHdpBTewtcaVr7atyvKJOadOYBCf3hOl+XwqFKKK84vG/Q67DElEJkG+iefOvo2gTWlrUuuF+xornmxkqrZGefKRunnGv5FFPyNq+c6uvktnHyb/c6eD5oJ+w3tLynzqnGXKzGSyZy47E6I9FkoDjL6C2tJ5g6VPC2UJKcXuiCUcrDPBMV2Jx2FisqHEw6XMaZV4HmmipK08Qb9bcR1ruqeK6WyqM5zUW+zfc1kqZRlhIsMJ2Zxh/BZE1UNTTUQKUpD6ShasourKkjW1u1RXcQ00bo1c2XLy3S97Npp7uWtJkT9rTQ2lCZ0sNpFkpD6wAOgF6u7+Zm/CznlWfciG48paytRK1k6qJuT8a9weeJtyoyXEmbhb/ur+6R9te7Nk+fT41m4tbtHttVsFmcWifgDDuJKZgRhd590oT+EaXV5AXPwqpqbI0xdkuiX4viT6e5RofvPcWGm4cVqOyLNsoCEjsBYVwlljlJzl1e5WSyVONsOO5JLN9610424+lZ6a3Dw+5Mlgjx3mpdt0UpdP2mibeduo9a2CUn0RMrOVekTIsKY86ER2VqUe2g7k8qzjpLLniMWY2X0wWZSOvw7AUx7KfcDi7agCwrdabgdNUlOb5n9P5NHfrZWbR2RcgWFbson2gOI2mbVFxNSkjR8Z0k8uvrXI8X0qWq5u0t/+G/4fLxKeXyILOdSCN6pKjwUdQD3HStHYoRfQs2R8jfDW882d8jdkEpUAftW5jtUNmIbRZDIk/aFk6IHMf2qHOOvUwwUO2uKrgYS5h+HsOSMUntqZYYZTmKEqFlLNuAAvb6VteF6ZTs8a14hHdt/sQ2SyeMSIUuFJVGnRnYzqACUOJsbHh8O9dvXdXdHnrllE+mh4knzdidCksBrdvQ2CU6pdQnK4k9cw4+RvUkVvk2tVcYzUo7NFrhTstctsQA6qQdEhoXJ/Lz061YtvqrhzWvCNnbfSq/1eh3+y2zjOBb2Q4hv36QbqCPsspOuUfH9WFcJxXiS1U8Q2gunt9pzVjjObcFiJerUSda0reTKKwalqrOCJEiw2UgtrxFyZu0gtpsFAcz+VdTwKqTnKx9Ft8zX8SmowUPM6+wrpzTH2gFAKAptpcM9+hhxv+Ozco0vccxWv4jpfHqzH1l0Luh1PgWb9GcgwopICra8CK4e5ZWTfS3JaCQ0OR51VfrEEkSgQBoOHICoe5G0RcOhFi6nCXZTuri+p6DtU91zslyrouh42seSKXarB4G0M6LFd3pMZKt69HUAQTbw3IN+Hqa2Wj1Vmirco438zKpySb8yDF2BwOOq60zZHZ14Af6QKknx3WS6NL3L75JfFs8zooUOPAZ3UGM1GQeIQNT59fjWtt1Fl0uayTkzBrLy+pv0SDbXqetQvLMkjBSq9jHJmkaFEqUAkEkmwA51bqrbaSW5nsllncYPBECCho6uHxLP4j+rV3mi0y01Kr79/ec3qbvGscidVsgFAKAUB8IvQHJbSYSqOtUyKi7RN1pH3D18q5rivDsN3VrZ9fZ7fubnQ6vmXhT69itbWCOorlbINMvtZN6V1A0RuJGxl9xrC3SysoUVJBIOtj+hVnSRTnuYcvprIittMMhDKQlNvnUdkpSeZEuMm0qrDB7g+FVe4Z7gwUupIwMkjStyrEazJI6LZvCVJImyk2VxaQeX4j/auq4Vw7w/1bFv2Xl7feafX6vm/Th07nSit6asUAoBQCgFAfFAKBB4HrRrIORx7DPdHQ5GRZlXADgk9Pp8q5Ti3D1XPxIL0X9H/JutFqudcs3uVSXhauflSbFxIeMPbyOiMk+J5YAHYc6l01bjJyfYw5NyWldhbkKjdeWZ8oLlPCPeUxU5WarPcBpDslwNsNqcWeSRerNOmna+WCyzGc4Vx5pvCOmwfZ5LKkvTsrjg1S3xSk9+prpdDwqNLU7d5fRGm1Wvdno17L6nQjStya0UAoBQCgFAKAUBg62h1tSHEhSVaEKFwa8klJYZ6m08oqntnMPdcz5XE9QlehrXy4VpZPPL9WW46++KwmQntkIu8U5GeW2s81+P4X42qGzg1MvUbX1Jq+J2R9ZJkdWyskHwyWiO4Iqo+By7TXy/ksLisO8QnZSQVeOU0B2STSPA5d5/T+Q+Kx7RJ0fZaKggyHnHuw8I+vrVyrg9EfWbZWs4nbL1VguY0VmK3kjtIbT0SLVs66oVrlgsIoTnKbzJ5N1ZmIoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQH/9k="/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My InFo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resetcss.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="reponsive.css">
+    <script src="https://kit.fontawesome.com/97aa991169.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="loading active ">
+        <p>LOADING DATA...</p>
+    </div>
+    <div class="main">
+        <marquee onMouseOver="this.stop()" onMouseOut="this.start()" behavior="" direction="">Chào mừng đến với WebSite của Nguyễn Hoàng Anh | Ngày tạo: 27/04/2022 - Ngày hoàn thành: 07/05/2022
+        </marquee>
+        <div class="grid wide">
+            <!-- heading -->
+            <div class="row  header">
+                    <div class="header__left col l-6 m-12 c-12">
+                        <div class="row">
+                            <div class="header__avata col l-4 m-4 c-12">
+                                <img  src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/279511273_146883711207276_4944190735410305998_n.jpg?_nc_cat=111&ccb=1-6&_nc_sid=09cbfe&_nc_ohc=z_9g7bpaacAAX-xlrUQ&_nc_ht=scontent.fhan14-2.fna&oh=00_AT-MTz4x0FZLyz-YNtg_ohs51-gcpj13pHdhnFH0GSWf_g&oe=627BD29D" alt="Đây là Đức" class="header__avata-img">
+                            </div>
+                            <div class="header__left-info col l-8 m-8 c-12 ">
+                                <h1 class="header__left-name">Nguyễn Hoàng Anh</h1>
+                                <div class="header__left-discription">Phong độ là nhất thời. Đẳng cấp là phải duy trì!</div>
+                                <div class="header__left-icon">
+                                    <a href=""target="_blank" >
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                    <a href="" target="_blank">
+                                        <i class="fa-brands fa-facebook-messenger"></i>
+                                    </a>
+                                    <a href="">
+                                        <img style="width: 26px;height: 26px;border-radius: 50%;" src="https://inkythuatso.com/uploads/thumbnails/800/2021/09/zalo-logo-inkythuatso-14-15-05-01.jpg" alt="">
+                                    </a>
+                                    
+                                    <a href=""><i class="fa-brands fa-github" target="_blank"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__right col l-6 m-12 c-12">
+                        <div class="row">
+                            <div class="header__right-info col l-6 m-6 c-12">
+                                <h3>EMAIL
+                                    <p >hoanganh.eaut@gmail.com</p>
+                                </h3><h3>NGÀY SINH
+                                    <p >01/04/1996</p>
+                                </h3>
+                            </div>
+                            <div class="header__right-info col l-6 m-6 c-12">
+                                <h3>SỐ ĐIỆN THOẠI
+                                    <p >0779***295</p>
+                                </h3>
+                                <h3>QUÊ QUÁN
+                                    <p >Khánh Hồng-Yên Khánh-Ninh Bình</p>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+            </div>
+            <!-- CONTAINER -->
+            <div class="row container">
+                <!-- CONTAINER SELECTION -->
+                <div class="container__selection-all col l-2 m-12 c-12 ">
+                    <div class="container__selection ">
+                        <div class="container__selection-item active">
+                            <a href="#info">
+                            <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/nobciafz.json"
+                                    trigger="morph"
+                                    style="width:70px;height:70px">
+                                </lord-icon>
+                            <p>Bản Thân</p>
+                        </a>
+                        </div>
+                        <div class="container__selection-item ">
+                            <a href="#result">
+                            <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/wxnxiano.json"
+                                    trigger="morph"
+                                    style="width:70px;height:70px">
+                                </lord-icon>
+                            <p>Kết Quả</p>
+                        </a>
+                        </div>
+                        <div class="container__selection-item">
+                            <a href="#target">
+                            <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/iltqorsz.json"
+                                    trigger="morph"
+                                    style="width:70px;height:70px">
+                                </lord-icon>
+                            <p>Mục Tiêu</p>
+                        </a>
+                        </div>
+                        <div class="container__selection-item">
+                            <a href="#enjoin">
+                            <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                                <lord-icon
+                                    src="https://cdn.lordicon.com/rjzlnunf.json"
+                                    trigger="morph"
+                                    style="width:70px;height:70px">
+                                </lord-icon>
+                            <p>Sở Thích</p>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- CONTENT -->
+                <div class="container__content-all col l-10 m-12 c-12">
+                    <!-- INFOMATION -->
+                    <div id="#info" class="container__content active ">
+                        <div class="container__content-info ">
+                                <div class="container__content-title">
+                                    <h1>Giới Thiệu!</h1>
+                                </div>
+                                <div class="title__discription">
+                                    <p>Tháng 9/2019 sau khi học hết cấp 3 mình đăng ký thi đại học</p>
+                                    <br>
+                                    <p>Tháng 2/2020 vì xảy ra một số chuyện nên mình quyết định bỏ học đại học. </p>
+                                    <br>
+                                    <!-- <p>Sau khi nghỉ học mình lên Hà Nội ăn chơi một thời gian. Và nhậN ra rất nhiều điều và đặt biệt điều khiến mình k bao giờ quên nhất chính là k nên tin vào bố con thnagwf nào.</p>
+                                    <br> -->
+                                    <p>Tháng 8/2020 sau một thời gian nghỉ học khá là lâu mình quyết nộp hồ sơ vào Đại học Công nghệ Đông Á theo học chuyên ngành công nghệ thông tin. Lúc đầu mình cảm thấy rất là khó đối với mình sau một thời gian chịu khó tìm tòi và học hỏi nên mình đã code được một số ngôn nữ lậP trình như Java, Python, HTML, CSS, JavaScript, C#.</p>
+                                    <br>
+                                    <p>Từ đó đến nay cũng được 2 năm và trang Web này là nột trong số sản phẩm được viết bởi những kiến thức học qua internet chủ yếu qua trang https://v1study.com/ và hai kênh Youtube F8-FullStack và freecodecamp</p>  
+                                </div>
+                                <div class="title__discription">
+                                    <br>
+                                    <!-- <p>
+                                        Mình không đám nói là bản thân chăm học trong 2 tháng vừa rồi mình học đôi lúc hay chảnh mảng không tập trung. Nhưng rồi trang Web này vẫn được mình cho ra đời mình hi vọng rằng sẽ gặp được một "Chiến Hữu hay Đối Thủ" để có thể giao tranh "Đấu Kiếm" sớm tiến tới đắc đạo thống nhất thiên hạ.
+                                    </p> -->
+                               <h1>Một số câu nói ảnh hưởng đến thế giới quan của mình!</h1>
+                                </div>
+                            <div class="slide__container">
+                                <i class="slide-left fa-solid fa-angle-left"></i>
+                                <i class="slide-right fa-solid fa-angle-right"></i>
+                                <ul class="slide-dot">
+                                    <li class="slide-dot-item active"></li>
+                                    <li class="slide-dot-item"></li>
+                                    <li class="slide-dot-item"></li>
+                                    <li class="slide-dot-item"></li>
+                                    <li class="slide-dot-item"></li>
+                                </ul>
+
+                                <div class="slide-main active">
+                                    
+                                    <div class="slide-img">
+                                        <img src="data:image/jpeg;base64,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" alt="">
+                                    </div>
+                                    <div class="slide-content">
+                                        <h1>Jack Ma</h1>
+                                    <p>"Nếu bạn không thành công người khác sẽ thành công"</p>
+                                    </div>
+                                </div>
+                                <div class="slide-main ">
+                                    <div class="slide-img">
+                                        <img src="./assets/img/tien-bip.jpeg" alt="">
+                                    </div>
+                                    <div class="slide-content">
+                                        <h1>Tiến Bịp</h1>
+                                    <p>Tiên trách kỷ, hậu vẫn là trách kỷ</p>
+                                    </div>
+                                </div>
+                                <div class="slide-main">
+                                    <div class="slide-img">
+                                        <img src="./assets/img/ngan-ngu-hay.jpeg" alt="">
+                                    </div>
+                                    <div class="slide-content">
+                                        <h1>Khuyết Danh</h1>
+                                    <p>Đến việc nhỏ bạn làm còn không tốt sao người ta tin bạn có thể làm được việc lớn.</p>
+                                    </div>
+                                </div>
+                                <div class="slide-main ">
+                                    <div class="slide-img">
+                                        <img src="./assets/img/the-godfather-1-1375687021-500-2676-4881-1631806006.jpeg" alt="">
+                                    </div>
+                                    <div class="slide-content">
+                                        <h1>The Godfather</h1>
+                                    <p>Không có một thành công nào mà không phải nỗ lực cho đến khi mệt mỏi, đừng trông chờ vào ăn may.</p>
+                                    </div>
+                                </div>
+                                <div class="slide-main ">
+                                    <div class="slide-img">
+                                        <img src="./assets/img/jvevermind.jpeg" alt="">
+                                    </div>
+                                    <div class="slide-content">
+                                        <h1>Jvevermind</h1>
+                                    <p>Nếu thuyền của bạn không tới, hãy tự bơi đi tìm nó.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- RESULT -->
+                    <div id="result" class="container__content ">
+                        <div class="container__result">
+                            <div class="container__content-product">
+                                <div class="container__content-title">
+                                <h1>Một số Project của tôi!</h1>
+                            </div>
+                            <div class="container__content-img-item row">
+                                <div class="container__content-img col l-6 m-6 c-12">
+                                    <div class="img-link">
+                                    <a href="./assets/results/thuattoan/index.html" target="_blank">
+                                        <div class="results-img">
+                                            <img src="./assets/img/thuattoan.png" alt="">
+                                            <div class="results-img-hover">
+                                                <div class="display-flex">
+                                                    <h1>Ngôn ngữ:&nbsp</h1> <span>HTML-Javascript</span>
+                                                </div>
+                                                <div class="display-flex">
+                                                    <h1>Thư viện/Famework:&nbsp</h1> <span>Không</span>
+                                                </div>
+                                                <div class="source-code">
+                                                    <a href="https://github.com/duchl02/duchl02.github.io/tree/main/assets/results/thuattoan" target="_blank"> Source Code</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </div>
+                                    <b><a href="./assets/results/thuattoan/index.html" target="_blank">Thuật toán Javascript</a></b>
+                                </div> 
+                                <div class="container__content-img col l-6 m-6 c-12">
+                                    <div class="img-link">
+                                        <a  href="./assets/results/shopmaytinh/index.html" target="_blank">
+                                            <div class="results-img">
+                                                <img src="./assets/img/shopmaytinh.png" alt="">
+                                                <div class="results-img-hover">
+                                                    <div class="display-flex">
+                                                        <h1>Ngôn ngữ:&nbsp</h1> <span>HTML-CSS-Javascript</span>
+                                                    </div>
+                                                    <div class="display-flex">
+                                                        <h1>Thư viện/Famework:&nbsp</h1> <span>SASS</span>
+                                                    </div>
+                                                    <div class="source-code">
+                                                        <a href="https://github.com/duchl02/duchl02.github.io/tree/main/assets/results/shopmaytinh" target="_blank"> Source Code</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <b> <a  href="./assets/results/shopmaytinh/index.html" target="_blank">Shop máy tính</a></b>
+                                </div> 
+                                <div class="container__content-img col l-6 m-6 c-12">
+                                    <div class="img-link">
+                                    <a href="./assets/results/CloneYoutube/index.html" target="_blank">
+                                        <div class="results-img">
+                                            <img src="./assets/img/cloneyoutube.png" alt="">
+                                            <div class="results-img-hover">
+                                                <div class="display-flex">
+                                                    <h1>Ngôn ngữ:&nbsp</h1> <span>HTML-CSS-Javascript</span>
+                                                </div>
+                                                <div class="display-flex">
+                                                    <h1>Thư viện/Famework:&nbsp</h1> <span>SASS</span>
+                                                </div>
+                                                <div class="source-code">
+                                                    <a href="https://github.com/duchl02/duchl02.github.io/tree/main/assets/results/CloneYoutube" target="_blank"> Source Code</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </div>
+                                    <b><a href="./assets/results/CloneYoutube/index.html" target="_blank">Youtube Clone</a> </b>
+                                </div>  
+                                <div class="container__content-img col l-6 m-6 c-12">
+                                    <div class="img-link">
+                                    <a href="./assets/results/playMusic/index.html" target="_blank">
+                                        <div class="results-img">
+                                            <img src="./assets/img//playmusic.png" alt="">
+                                            <div class="results-img-hover">
+                                                <div class="display-flex">
+                                                    <h1>Ngôn ngữ:&nbsp</h1> <span>HTML-CSS-Javascript</span>
+                                                </div>
+                                                <div class="display-flex">
+                                                    <h1>Thư viện/Famework:&nbsp</h1> <span>Không</span>
+                                                </div>
+                                                <div class="source-code">
+                                                    <a href="https://github.com/duchl02/duchl02.github.io/tree/main/assets/results/playMusic" target="_blank"> Source Code</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </div>
+                                    <b><a href="./assets/results/playMusic/index.html" target="_blank">Play music</a></b>
+                                </div> 
+                                <div class="container__content-img col l-6 m-6 c-12">
+                                    <div class="img-link">
+                                    <a href="./assets/results/ShopeeClone/index.html" target="_blank">
+                                        <div class="results-img">
+                                            <img src="./assets/img/shopee.png" alt="">
+                                            <div class="results-img-hover">
+                                                <div class="display-flex">
+                                                    <h1>Ngôn ngữ:&nbsp</h1> <span>HTML-CSS</span>
+                                                </div>
+                                                <div class="display-flex">
+                                                    <h1>Thư viện/Famework:&nbsp</h1> <span>Không</span>
+                                                </div>
+                                                <div class="source-code">
+                                                    <a href="https://github.com/duchl02/duchl02.github.io/tree/main/assets/results/ShopeeClone" target="_blank"> Source Code</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </div>
+                                    <b><a href="./assets/results/ShopeeClone/index.html" target="_blank">Shopee clone</a></b> 
+                                </div>
+                                <div class="container__content-img col l-6 m-6 c-12">
+                                    <div class="img-link">
+                                    <a href="./assets/results/Clock/index.html" target="_blank">
+                                        <div class="results-img">
+                                            <img src="./assets/img/clock.png" alt="">
+                                            <div class="results-img-hover">
+                                                <div class="display-flex">
+                                                    <h1>Ngôn ngữ:&nbsp</h1> <span>HTML-CSS-Javascript</span>
+                                                </div>
+                                                <div class="display-flex">
+                                                    <h1>Thư viện/Famework:&nbsp</h1> <span>Không</span>
+                                                </div>
+                                                <div class="source-code">
+                                                    <a href="https://github.com/duchl02/duchl02.github.io/tree/main/assets/results/Clock" target="_blank"> Source Code</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </div>
+                                    <b><a href="./assets/results/Clock/index.html" target="_blank">Đồng hồ</a></b>
+                                </div> 
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- TARGET -->
+                    <div id="target" class="container__content">
+                        <div class="container__target">
+                            <h1>Mục Tiêu!</h1>
+                            <h2>Học HTMl - CSS - Javascript cơ bản</h2>
+                            <h4>01/04/2022(Hoàn thành)</h4>
+                            <p>Là ngôn ngữ để bắt đầu bước vào con đường lập trình HTML và CSS có mối tương quan mật thiết. HTML là nền tảng của site và CSS giúp định hình phong cách (tất cả những gì tạo nên giao diện website). Hai yếu tố này hoàn toàn không thể tách rời. HTML đóng vai trò cung cấp cấu trúc nội dung và xác định nội dung đó. Các nội dung này có thể kể đến như tiêu đề, đoạn văn hoặc hình ảnh. </p>
+                            <h2>Học sử dụng GIT và SASS</h2>
+                            <h4>01/05/2022(Hoàn thành)</h4>
+                            <p>Hiện nay, Git trở thành một trong các phần mềm quản lý mã nguồn phổ biến nhất. Việc biết sử dụng Git sẽ là lợi thế lớn với nhà tuyển dụng vì độ phổ biến và sự ứng dụng cao của nó. Với SASS, bạn có thể viết CSS theo thứ tự rõ ràng, quản lý các biến đã được định nghĩa sẵn, các class dùng chung hay có thể tự động nén tập tin CSS lại để bạn tiết kiệm dung lượng.</p>
+                            <h2>Biết Sử Dụng Jquery và thuần thục Javascript</h2>
+                            <h4>01/06/2022(Trong tiến trình)</h4>
+                            <p>Jquery và Boostrap là hai thư viện quan trọng nhất định phải học khi làm lập trình viên Front End. Việc sử dụng thuần thục hai thư viện này sẽ giúp code nhanh gọn và học ReactJS nhanh hơn.</p>
+                            <h2>Học ReactJS và luyện tập Javascript</h2>
+                            <h4>01/07/2022</h4>
+                            <p>ReactJS là yêu cầu thiết yếu của các nhà tuyển dụng Front End, nhằm nâng cao và tối ưu hoá UI. Bên cạch đó việc nâng khả năng Javascript càng quan trọng không kém, có khả năng viết tốt Javascript mới kết hợp được tất cả kiến thức tạo ra sự trơn tru mạch lạc.Trong thời gian này bản thân sẽ cố gắng luyện code nhiều nhất có thể, một tuần sẽ cố gắng cho ra một sản phẩm hoàn chỉnh và sẽ được đưa vào CV.</p>
+                            
+                        </div>
+                    </div>
+                    <!-- ENJOIN -->
+                    <div id="enjoin" class="container__content">
+                        <div class="container__enjoin ">
+                               <h2>Sở Thích</h2>
+                               <div class="container__enjoin-item">
+                                <img src="./assets/img/hoanghon.png" alt="" class="enjoin-img">
+                                <div class="enjoin-description">
+                                    <h1>Ngắm hoàng hôn </h1>
+                                    <p>Thích ngắm bầu trời là kẻ mộng mơ , thích nghe nhạc cũ là kẻ nặng tình. Có những buổi chiều ta đơn phương dạo bước trên con đường đầy những chiếc lá khô rơi rụng ngắm nhìn khung cảnh chiều hoàng hôn lãng du, thả mình theo làn gió nhẹ đâu đó lướt ngang qua. Đôi khi, chỉ đơn giản như thế cũng đủ khiến ta cảm thấy thoải mái và yên bình đến lạ.  Hoàng hôn với làn gió chiều lãng du khẽ lay động tâm hồn của kẻ suy tư gợi nhớ về những kỷ niệm tưởng chừng đã lắng sâu.</p>
+                                </div>
+                            </div>
+                            <div class="container__enjoin-item">
+                                <img src="./assets/img/jav.webp" alt="" class="enjoin-img">
+                                <div class="enjoin-description">
+                                    <h1>Japanese Anti Virus</h1>
+                                    <p>JAV là trình diệt virus. Triệu chứng khi mắc loại virus này là cảm giác bức rức trong người, căng cơ và bị cứng đột ngột ở một số bộ phận trên cơ thể. Sau khi sử dụng trình diệt virus này, có cảm giác sảng khoái như được xả stress trút bỏ được gánh nặng nào đó, ngày nào cũng phải xem ít nhất 180 phút mới chịu được.</p>
+                                </div>
+                            </div>
+                            <div class="container__enjoin-item">
+                                <img src="./assets/img/mayTinh.jpeg" alt="" class="enjoin-img">
+                                <div class="enjoin-description">
+                                    <h1>Đồ chơi công nghệ</h1>
+                                    <p>Đồ chơi công nghệ là những món đồ chơi luôn có sức hấp dẫn đối với những người đam mê công nghệ.  Các sản phẩm đồ chơi công nghệ độc đáo, đầy sáng tạo, bao gồm cả các thiết bị công nghệ hỗ trợ các hoạt động gia đình và cả các thiết bị đồ chơi điều khiển từ xa như nhà thông minh, robot hút bụi lau nhà tự động, xe điều khiển từ xa, flycam, thuyền, tàu cano điều khiển từ xa , máy bay điều khiển từ xa,..</p>
+                                </div>
+                            </div>
+                            
+                            <div class="container__enjoin-item">
+                                <img src="./assets/img/lienquan.jpeg" alt="" class="enjoin-img">
+                                <div class="enjoin-description">
+                                    <h1>Liên Quân Mobile</h1>
+                                    <p>Garena Liên Quân Mobile là một trò chơi đấu trường trận chiến trực tuyến nhiều người chơi do Timi Studio, một studio trực thuộc Tencent Games phát triển và phát hành bởi Garena, phân phối trên các nền tảng di động Android, iOS và Nintendo Switch, bắt đầu từ cuối năm 2016.</p>
+                                </div>
+                            </div>
+                            <div class="container__enjoin-item">
+                                <img src="./assets/img/bunchaaaaaa.jpeg"  alt="" class="enjoin-img">
+                                <div class="enjoin-description">
+                                    <h1>Bún chả Hà Nội</h1>
+                                    <p>Bún chả là một món ăn của Việt Nam, bao gồm bún, chả thịt lợn nướng trên than hoa và bát nước mắm chua cay mặn ngọt. Món ăn xuất xứ từ miền Bắc Việt Nam, là thứ quà có sức sống lâu bền nhất của Hà Nội.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+
+    const $ = document.querySelector.bind(document)
+    const $$ = document.querySelectorAll.bind(document)
+
+    const items = $$('.container__selection-item')
+    const contents = $$('.container__content')
+
+    // CONTAINER-ITEM
+    items.forEach(function(item,index) {
+        item.onclick = function(){
+            const content = contents[index]
+            // tabActive()
+            $('.container__content.active').classList.remove('active')
+            $('.container__selection-item.active').classList.remove('active')
+
+            item.classList.add('active')
+            content.classList.add('active')
+        }
+    })
+    function tabActive(){
+        document.documentElement.scrollTop= 100 + 'px'
+    }
+    // DOT-SLIDE
+    const dots=$$('.slide-dot-item')
+    const slides=$$('.slide-main')
+    const numberOfSilides = slides.length
+    var slideNumber = 0
+    var slideIndex = 0
+    dots.forEach(function(dot,index){
+        dot.onclick = function(){
+            const slide = slides[index]
+            $('.slide-main.active').classList.remove('active')
+            $('.slide-dot-item.active').classList.remove('active')
+            dot.classList.add('active')
+            slide.classList.add('active')
+        }
+    })
+    // AUTO SLIDE
+    function autoSlide(){
+        setInterval(function(){
+            dots.forEach(function(dot){
+            dot.classList.remove('active')
+            })
+            slides.forEach(function(slide){
+            slide.classList.remove('active')
+            })
+            slideNumber ++
+            
+            if (slideNumber > dots.length-1){
+                slideNumber =0;
+            }
+            dots[slideNumber].classList.add('active')
+            slides[slideNumber].classList.add('active')
+        },5000)
+    }
+    autoSlide()
+    // NEXT SLIDE
+    const backBtn = $('.slide-left')
+    const nextBtn = $('.slide-right')
+    
+    nextBtn.addEventListener('click', function(){
+        dots.forEach(function(dot){
+            dot.classList.remove('active')
+            })
+            slides.forEach(function(slide){
+            slide.classList.remove('active')
+            })
+            slideNumber ++
+            
+            if (slideNumber > dots.length-1){
+                slideNumber =0;
+            }
+            dots[slideNumber].classList.add('active')
+            slides[slideNumber].classList.add('active')
+    })
+    // BACK SLIDE
+    backBtn.addEventListener('click', function(){
+        dots.forEach(function(dot){
+            dot.classList.remove('active')
+            })
+            slides.forEach(function(slide){
+            slide.classList.remove('active')
+            })
+            slideNumber --
+
+            if(slideNumber<0){
+                slideNumber = dots.length -1
+            }
+            dots[slideNumber].classList.add('active')
+            slides[slideNumber].classList.add('active')
+    })
+    const loading= $('.loading')
+    // HIỆU ỨNG LOADING GIẢ
+    setTimeout(function(){
+        loading.classList.remove('active')
+    },1000)
+</script>
+</body>
+</html>
